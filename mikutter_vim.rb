@@ -67,8 +67,11 @@ Plugin.create :vim do
     # 子プロセスまで残り続ける。
     # @saved_vim_panel など使わなくても、ここの引数から
     # 取得できそうな気がするが取得方法が分からない。
-    @saved_vim_panel.destroy
-    @saved_vim_panel = nil
+    puts gui
+    if gui.slug == :vim && @saved_vim_panel != nil then
+      @saved_vim_panel.destroy
+      @saved_vim_panel = nil
+    end
   end
 
 end
