@@ -22,10 +22,7 @@ Plugin.create :vim do
     run_vim_on vim_panel.terminal
 
     tab(:vim, 'Vim') do
-      # TODO: アイコン設定
-      # 候補1: おなじみVIMアイコン
-      # 候補2: Vim Girl
-      # set_icon ...
+      set_icon File.join(File.dirname(__FILE__), 'icon.png')
       set_deletable true
       nativewidget vim_panel
       active!
