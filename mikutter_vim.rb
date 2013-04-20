@@ -4,7 +4,7 @@ require File.expand_path File.join(File.dirname(__FILE__), 'lib', 'simple_termin
 
 Plugin.create :vim do
   UserConfig[:vim_respawn] ||= false
-  @saved_vim_panel = nil
+  @saved_vim_pane = nil
 
   # コマンド定義
   command(:vim_open,
@@ -16,10 +16,10 @@ Plugin.create :vim do
       Plugin::GUI::Tab.instance(:vim).active!
       next
     end
-    vim_panel = SimpleTerminalPane.new(false)
-    setup_terminal_pane vim_panel
+    vim_pane = SimpleTerminalPane.new(false)
+    setup_terminal_pane vim_pane
 
-    run_vim_on vim_panel.terminal
+    run_vim_on vim_pane.terminal
 
     tab(:vim, 'Vim') do
       # TODO: アイコン設定
@@ -27,10 +27,10 @@ Plugin.create :vim do
       # 候補2: Vim Girl
       # set_icon ...
       set_deletable true
-      nativewidget vim_panel
+      nativewidget vim_pane
       active!
     end
-    @saved_vim_panel = vim_panel
+    @saved_vim_pane = vim_pane
   end
 
   # 設定項目
@@ -56,7 +56,7 @@ Plugin.create :vim do
   # 指定したターミナル上でVimを起動する。
   def run_vim_on(terminal)
     terminal.fork_command(
-      argv: [ "vim"],
+      argv: ['vim'],
       working_directory: ENV['HOME']
     )
   end
@@ -65,11 +65,11 @@ Plugin.create :vim do
     # タブ破棄時にSimpleTerminalPaneも破棄。
     # これをやらないとSimpleTerminalPaneどころか
     # 子プロセスまで残り続ける。
-    # @saved_vim_panel など使わなくても、ここの引数から
+    # @saved_vim_pane など使わなくても、ここの引数から
     # 取得できそうな気がするが取得方法が分からない。
-    if gui.slug == :vim && @saved_vim_panel != nil then
-      @saved_vim_panel.destroy
-      @saved_vim_panel = nil
+    if gui.slug == :vim && @saved_vim_pane != nil then
+      @saved_vim_pane.destroy
+      @saved_vim_pane = nil
     end
   end
 
