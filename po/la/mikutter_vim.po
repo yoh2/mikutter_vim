@@ -20,7 +20,7 @@ msgstr ""
 
 #: mikutter_vim.rb:11
 msgid "Vimを開く"
-msgstr "Aperire Vimum"
+msgstr "Vimum aperire"
 
 #: mikutter_vim.rb:35
 msgid "終了後に再度Vimを開く"
