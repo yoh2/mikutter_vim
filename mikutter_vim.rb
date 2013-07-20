@@ -8,7 +8,7 @@ Plugin.create :vim do
 
   # コマンド定義
   command(:vim_open,
-          name: 'Vimを開く',
+          name: _('Vimを開く'),
           condition: lambda{ |opt| true },
           visible: true,
           role: :pane) do |opt|
@@ -32,7 +32,7 @@ Plugin.create :vim do
 
   # 設定項目
   settings 'Vim' do
-    boolean '終了後に再度Vimを開く', :vim_respawn
+    boolean _('終了後に再度Vimを開く'), :vim_respawn
   end
 
   # ターミナルペイン初期設定。
