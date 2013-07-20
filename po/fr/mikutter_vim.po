@@ -1,5 +1,5 @@
-# Japanese translations for mikutter_vim package
-# mikutter_vim パッケージに対する英訳.
+# French translations for mikutter_vim package
+# Traductions françaises du paquet mikutter_vim.
 # Copyright (C) 2013 THE mikutter_vim'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the mikutter_vim package.
 #  <yoh2.sdj@gmail.com>, 2013.
@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: mikutter_vim 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-21 02:53+0900\n"
-"PO-Revision-Date: 2013-07-21 03:38+0900\n"
+"PO-Revision-Date: 2013-07-21 04:52+0900\n"
 "Last-Translator: yoh2 <yoh2.sdj@gmail.com>\n"
-"Language-Team: Japanese\n"
-"Language: ja\n"
+"Language-Team: French\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: mikutter_vim.rb:11
 msgid "Vimを開く"
